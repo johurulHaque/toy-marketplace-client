@@ -5,6 +5,24 @@ import UserToyTable from './UserToyTable';
 const UserToy = () => {
     const { user } = useContext(AuthContext);
     const [userToys,setUserToys] = useState([]);
+    const handleDelete = (id)=>{
+        const proced = confirm('are delete');
+        if(proced){
+            fetch(`http://localhost:5000/toy/${id}`,{
+                method:"DELETE"
+            })
+            .then(res => res.json())
+            .then(data =>{
+                if(data.deletedCount > 0){
+                    alert('delete successful')
+                    const remaing = userToys.filter(toy => toy._id !== id);
+                    setUserToys(remaing)
+                }
+                // console.log(data)
+            })
+        }
+        console.log(id);
+    }
 
     const url = `http://localhost:5000/user-toy?email=${user?.email}`;
     useEffect(()=>{
@@ -32,7 +50,7 @@ const UserToy = () => {
           </thead>
           <tbody>
             {
-                userToys.map(toy => <UserToyTable key={toy._id} toy={toy}></UserToyTable>)
+                userToys.map(toy => <UserToyTable key={toy._id} toy={toy} handleDelete={handleDelete}></UserToyTable>)
             }
            
           </tbody>

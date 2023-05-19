@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UserToyTable = ({toy}) => {
+const UserToyTable = ({toy,handleDelete}) => {
     const {_id,name,price,quantity,subcategory} = toy;
     console.log(toy)
+
+   
     return (
         <tr>      
         <td>{toy?.sellerName ? toy.sellerName :"no seller"}</td>
@@ -13,9 +15,9 @@ const UserToyTable = ({toy}) => {
         <td>{quantity}</td>
         <th>
           <Link to={`/toy/${_id}`}>
-          <button className="btn btn-ghost btn-xs" >view details</button>
-          
+          <button className="btn btn-ghost btn-xs" >view details</button>          
           </Link>
+          <button onClick={()=>handleDelete(_id)}>Delete</button>
         </th>
       </tr>
     );
