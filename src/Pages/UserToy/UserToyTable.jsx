@@ -13,7 +13,7 @@ const UserToyTable = ({toy}) => {
         <td>{quantity}</td>
         <th>
           <Link to={`/toy/${_id}`}>
-          <button className="btn btn-ghost btn-xs" >details</button>
+          <button className="btn btn-ghost btn-xs" >view details</button>
           
           </Link>
         </th>
