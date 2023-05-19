@@ -14,8 +14,8 @@ const UserToyTable = ({toy,handleDelete}) => {
         <td>{price}</td>
         <td>{quantity}</td>
         <th>
-          <Link to={`/toy/${_id}`}>
-          <button className="btn btn-ghost btn-xs" >view details</button>          
+          <Link to={`/updatetoy/${_id}`}>
+          <button className="btn btn-ghost btn-xs" >Update</button>          
           </Link>
           <button onClick={()=>handleDelete(_id)}>Delete</button>
         </th>
