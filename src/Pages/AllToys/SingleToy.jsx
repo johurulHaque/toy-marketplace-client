@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const SingleToy = () => {
   const single_toy = useLoaderData();
 
-  const {id,name,price,quantity,subcategory,description,rating,sellerName, sellerEmail} = single_toy;
+  const {name,price,quantity,subcategory,description,rating,sellerName, sellerEmail} = single_toy;
   console.log(single_toy);
   return (
     <div className="card card-side bg-base-100 shadow-xl">
