@@ -1,37 +1,29 @@
 // import { FaceFrownIcon } from '@heroicons/react/24/solid'
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
-
-// import errorLottie from "../../assets/error.json";
+import lottieError from "../../assets/404-page.json";
+import Lottie from "lottie-react";
 import "./ErrorPage.css";
 const ErrorPage = () => {
   const { error, status } = useRouteError();
 
   return (
-    <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
-      <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-        <div  className="p-5">
-          {/* <Lottie animationData={errorLottie} loop={true} /> */}
-        </div>
-        <div  className="p-0">
-          <div className="errorPage">
-            <div>
-              <h2 className="chef_text">
-                <span>
-                  We fatch some problem to serve you, we are waiting to see you
-                  soon.
-                </span>
-                {status || 404}
-              </h2>
-              <p>{error?.message}</p>
-              <Link to="/">
-                <button>Back to home</button>
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col md:flex-row justify-center items-center mt-10">
+      <div>
+        <Lottie animationData={lottieError} loop={true} />
       </div>
-    </section>
+
+      <div>
+        <h2 className="text-4xl text-sky-400">Page Not Found</h2>
+        <p className="text-2xl">Status code: {status || 404}</p>
+        <p className="text-2xl">
+          Error: <span className="text-red-400"> {error?.message}</span>
+        </p>
+        <Link to="/">
+          <button className="btn btn-outline btn-info ">Back To Home</button>
+        </Link>
+      </div>
+    </div>
   );
 };
 
