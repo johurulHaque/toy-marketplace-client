@@ -5,7 +5,7 @@ import ironman from "../../assets/images/banner/ironman.jpg";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
 const ToysRow = ({ toy }) => {
-  const { _id, name, price, quantity, subcategory } = toy;
+  const { _id, name, price, quantity, subcategory,image } = toy;
   const {user} = useContext(AuthContext);
 
   const handleToast = ()=>{
@@ -17,7 +17,7 @@ const ToysRow = ({ toy }) => {
   return (
     <tr>
       <td>
-        <img src={ironman} alt="" className="w-14 h-9" />
+      <img src={image} alt="" className="w-16 h-20" />
       </td>
       <td>{toy?.sellerName ? toy.sellerName : "no seller"}</td>
       <td>{name}</td>

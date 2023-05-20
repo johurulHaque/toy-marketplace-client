@@ -65,6 +65,7 @@ const UserToy = () => {
         {/* head */}
         <thead>
           <tr>
+            <th>Image</th>
             <th>Toy Name</th>
             <th>Sub-category</th>
             <th>Price</th>

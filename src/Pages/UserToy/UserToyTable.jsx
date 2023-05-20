@@ -3,11 +3,14 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const UserToyTable = ({ toy, handleDelete }) => {
-  const { _id, name, price, quantity, subcategory } = toy;
+  const { _id, name, price, quantity, subcategory,image } = toy;
   // console.log(toy);
 
   return (
     <tr>
+       <td>
+        <img src={image} alt="" className="w-16 h-20" />
+      </td>
       <td>{name}</td>
       <td>{subcategory}</td>
       <td>{price}</td>

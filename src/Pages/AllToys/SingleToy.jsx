@@ -16,12 +16,13 @@ const SingleToy = () => {
     rating,
     sellerName,
     email,
+    image
   } = single_toy;
   console.log(single_toy);
   return (
     <div className="card card-side bg-base-100 shadow-xl  w-[80%] mx-auto">
       <figure className=" w-80">
-        <img src={ironman} alt="iron man" className="w-48" />
+        <img src={image} alt="iron man" className="w-48" />
       </figure>
       <div className="card-body">
         <h2 className="card-title link-a text-2xl">
