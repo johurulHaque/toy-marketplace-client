@@ -7,12 +7,13 @@ const AllToys = () => {
   console.log(toys);
   return (
     <div>
-      <h2>All toys</h2>
+      <h2 className="text-3xl font-bold link-a">All toys</h2>
       <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+        <table className="table  table-zebra w-full">
           {/* head */}
           <thead>
-            <tr>    
+            <tr>
+              <th>Image</th>    
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-category</th>
@@ -23,7 +24,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {
-                toys.map(toy => <ToysRow key={toy._id} toy={toy}></ToysRow>)
+                toys?.map(toy => <ToysRow key={toy._id} toy={toy}></ToysRow>)
             }
            
           </tbody>
