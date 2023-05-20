@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import img1 from "../../assets/images/banner/1.jpg";
-import img2 from "../../assets/images/banner/2.jpg";
-import img3 from "../../assets/images/banner/3.jpg";
-import img4 from "../../assets/images/banner/4.jpg";
+import img1 from "../../assets/images/banner/img1.jpeg";
+import img2 from "../../assets/images/banner/img2.jpeg";
+import img3 from "../../assets/images/banner/img3.png";
 const Banner = () => {
   return (
     <div className="carousel w-full h-[600px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img
-          src="https://images.pexels.com/photos/264905/pexels-photo-264905.jpeg"
+          src={img1}
           className="w-full rounded-lg"
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
@@ -44,7 +43,7 @@ const Banner = () => {
       </div>
       <div id="slide2" className="carousel-item relative w-full">
         <img
-          src="https://images.pexels.com/photos/4061662/pexels-photo-4061662.jpeg"
+          src={img2}
           className="w-full rounded-lg"
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
@@ -80,7 +79,7 @@ const Banner = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <img
-          src="https://images.pexels.com/photos/6249257/pexels-photo-6249257.jpeg"
+          src={img3}
           className="w-full rounded-lg"
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
