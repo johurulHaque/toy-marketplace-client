@@ -3,7 +3,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TapCard from "./TapCard";
 
-
 const TabItem = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [datas, setData] = useState([]);

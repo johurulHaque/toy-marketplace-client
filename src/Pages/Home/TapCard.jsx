@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import ironman from "../../assets/images/banner/ironman.jpg";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const TapCard = ({ data }) => {
+  const {user} = useContext(AuthContext);
   const { _id, name, price, rating } = data;
   // console.log(data)
+  const handleToast = ()=>{
+    if(!user){
+      toast.error("You have to log in first to view details")
+    }
+  }
   return (
     <div className="card w-96 glass">
       <figure>
@@ -29,7 +37,7 @@ const TapCard = ({ data }) => {
         </div>
         <div className="card-actions justify-end">
           <Link to={`/toy/${_id}`}>
-            <button className="btn bg-[#09ccd0]">View Details</button>
+            <button className="btn bg-[#09ccd0]" onClick={handleToast}>View Details</button>
           </Link>
           {/* <button className="btn bg-[#09ccd0]">View Details</button> */}
         </div>

@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ironman from "../../assets/images/banner/ironman.jpg";
+import { toast } from "react-hot-toast";
+import { AuthContext } from "../../Provider/AuthProvider";
 const ToysRow = ({ toy }) => {
   const { _id, name, price, quantity, subcategory } = toy;
+  const {user} = useContext(AuthContext);
 
+  const handleToast = ()=>{
+    if(!user){
+      toast.error("You have to log in first to view details")
+    }
+  }
   console.log(toy);
   return (
     <tr>
@@ -19,7 +27,7 @@ const ToysRow = ({ toy }) => {
       <th>
         <Link to={`/toy/${_id}`}>
           <button className="btn btn-outline btn-accent">
-            <FaEye className="text-2xl"></FaEye>
+            <FaEye className="text-2xl" onClick={handleToast}></FaEye>
           </button>
         </Link>
       </th>

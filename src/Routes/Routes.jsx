@@ -9,6 +9,7 @@ import AddToy from "../Pages/ToyCrud/AddToy";
 import UserToy from "../Pages/UserToy/UserToy";
 import UpdateToy from "../Pages/UserToy/UpdateToy";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -35,17 +36,17 @@ const router = createBrowserRouter([
         },
         {
           path: "/toy/:id",
-          element: <SingleToy />,
+          element: <PrivateRoutes> <SingleToy /></PrivateRoutes>,
           loader: ({params})=> fetch(`http://localhost:5000/toy/${params.id}`)
         },
         {
           path: "/addtoy",
-          element: <AddToy />        
+          element:  <PrivateRoutes><AddToy /></PrivateRoutes>
         }
         ,
         {
           path: "/usertoy",
-          element: <UserToy />        
+          element: <PrivateRoutes><UserToy /></PrivateRoutes>
         }
         ,
         {

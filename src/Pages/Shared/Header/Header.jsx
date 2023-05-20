@@ -50,12 +50,22 @@ const Header = () => {
             <li>
               <Link to="/alltoys">All Toys</Link>
             </li>
-            <li>
-              <Link to="/usertoy">My Toys</Link>
-            </li>
-            <li>
-              <Link to="/addtoy">Add Toy</Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link className="link-a" to="/usertoy">
+                    My Toys
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link-a" to="/addtoy">
+                    Add Toy
+                  </Link>
+                </li>
+              </>
+            ) : (
+              ""
+            )}
             <li>
               <a>Blogs</a>
             </li>
@@ -84,16 +94,22 @@ const Header = () => {
               All Toys
             </Link>
           </li>
-          <li>
-            <Link className="link-a" to="/usertoy">
-              My Toys
-            </Link>
-          </li>
-          <li>
-            <Link className="link-a" to="/addtoy">
-              Add Toy
-            </Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link className="link-a" to="/usertoy">
+                  My Toys
+                </Link>
+              </li>
+              <li>
+                <Link className="link-a" to="/addtoy">
+                  Add Toy
+                </Link>
+              </li>
+            </>
+          ) : (
+            ""
+          )}
           <li>
             <Link className="link-a" to="/blog">
               Blog
@@ -118,10 +134,10 @@ const Header = () => {
             </span>
           </button>
         ) : (
-          <Link to="/register">
+          <Link to="/login">
             <button>
               <span className="flex link-a items-center ">
-                <FaSignInAlt /> Register
+                <FaSignInAlt /> Login
               </span>
             </button>
           </Link>

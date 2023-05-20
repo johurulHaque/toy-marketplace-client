@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import "./AddToy.css";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-  // console.log(user);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,8 +23,16 @@ const AddToy = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
+      .then((data) => {
+        if(data.acknowledged){
+          Swal.fire({    
+            icon: 'success',
+            title: 'Item  added successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          navigate('/usertoy')
+        }
       });
   };
   return (
@@ -92,6 +102,14 @@ const AddToy = () => {
               className="input input-bordered"
               {...register("quantity", { required: true })}
               type="number"
+            />
+          </div>
+          <div className="form-control">
+            <input
+              className="input input-bordered"
+              {...register("description", { required: true })}
+              type="text"
+              placeholder="Enter description"
             />
           </div>
           
