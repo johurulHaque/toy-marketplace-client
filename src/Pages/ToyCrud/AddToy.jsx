@@ -67,6 +67,7 @@ const AddToy = () => {
             />
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mb-4">
           <div className="form-control">
             <input
@@ -93,6 +94,7 @@ const AddToy = () => {
               type="number"
             />
           </div>
+          
           {/* <div className="form-control">
             <input
               className="input input-bordered"
