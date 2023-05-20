@@ -1,10 +1,11 @@
 import React from "react";
 import ironman from "../../assets/images/banner/ironman.jpg";
 import Rating from "react-rating";
-import { FaRegStar, FaStar} from 'react-icons/fa';
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TapCard = ({ data }) => {
-  const { id, name, price, quantity, rating } = data;
+  const { _id, name, price, rating } = data;
   // console.log(data)
   return (
     <div className="card w-96 glass">
@@ -27,7 +28,10 @@ const TapCard = ({ data }) => {
           <span className="ms-1">{rating}</span>
         </div>
         <div className="card-actions justify-end">
-          <button className="btn bg-[#09ccd0]">View Details</button>
+          <Link to={`/toy/${_id}`}>
+            <button className="btn bg-[#09ccd0]">View Details</button>
+          </Link>
+          {/* <button className="btn bg-[#09ccd0]">View Details</button> */}
         </div>
       </div>
     </div>
