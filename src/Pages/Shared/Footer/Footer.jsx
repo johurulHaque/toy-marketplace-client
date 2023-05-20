@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer p-10  bg-[url('/footer.png')] h-[100%] text-base-content">
+    <footer className="footer p-10 mt-9  bg-[url('/footer.png')] h-[100%] text-base-content">
       <div>
         <img src={logo} alt="" className="w-36" />
         <p>
@@ -22,11 +22,10 @@ const Footer = () => {
       </div>
       <div>
         <span className="footer-title">Services</span>
-        <a className="link link-hover"> About Us</a>
+        <a className="link link-hover">About Us</a>
         <a className="link link-hover">Contact Us</a>
         <a className="link link-hover">FAQs</a>
-        <a className="link link-hover">New Products</a>
-        <a className="link link-hover">Best Sales</a>
+        <a className="link link-hover">Why Choses us </a>        
       </div>
 
       <div>
@@ -34,8 +33,7 @@ const Footer = () => {
         <a className="link link-hover">Legal Notice</a>
         <a className="link link-hover">Delivery</a>
         <a className="link link-hover">Prices drop</a>
-        <a className="link link-hover">New products</a>
-        <a className="link link-hover">Best sales</a>
+        <a className="link link-hover">New products</a>        
       </div>
       <div>
         <span className="footer-title">CONTACT INFORMATION</span>

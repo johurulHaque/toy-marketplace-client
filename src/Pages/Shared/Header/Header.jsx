@@ -3,6 +3,7 @@ import logo from "../../../assets/toy.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import "./Header.css";
 
 const Header = () => {
   const { user, allSignOut } = useContext(AuthContext);
@@ -44,13 +45,16 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-            <Link to="/">Home</Link>    
+              <Link to="/">Home</Link>
             </li>
             <li>
-            <Link to="/alltoys">All Toys</Link>
+              <Link to="/alltoys">All Toys</Link>
             </li>
             <li>
-            <Link to="/usertoy">My Toy</Link>    
+              <Link to="/usertoy">My Toys</Link>
+            </li>
+            <li>
+              <Link to="/addtoy">Add Toy</Link>
             </li>
             <li>
               <a>Blogs</a>
@@ -61,25 +65,39 @@ const Header = () => {
           <Link to="/">
             <img src={logo} alt="" className="h-24" />
           </Link>
-          <h3>Toy Home</h3>
+          <h3 className="text-3xl">
+            {" "}
+            <span className="text-[#09ccd0]">Toys</span>
+            <span className="text-[#ff6f69]">Home</span>
+          </h3>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-          <Link to="/">Home</Link>    
+            <Link className="link-a" to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/alltoys">All Toys</Link>
+            <Link className="link-a" to="/alltoys">
+              All Toys
+            </Link>
           </li>
           <li>
-            <Link to="/addtoy">Add Toy</Link>            
+            <Link className="link-a" to="/usertoy">
+              My Toys
+            </Link>
           </li>
           <li>
-          <Link to="/usertoy">My Toy</Link>        
+            <Link className="link-a" to="/addtoy">
+              Add Toy
+            </Link>
           </li>
           <li>
-            <a>Blogs</a>
+            <Link className="link-a" to="/blog">
+              Blog
+            </Link>
           </li>
         </ul>
       </div>
@@ -88,25 +106,26 @@ const Header = () => {
           <Link>
             <img
               src={user?.photoURL}
-              //   style={{ width: "40px" }}
               title={user?.displayName ? user?.displayName : ""}
+              className="w-8 h-8 rounded-lg"
             />
           </Link>
         )}
-        {/* <span>{user.displayName} */}
         {user ? (
           <button onClick={handleLogout}>
-            Logout <FaSignOutAlt />
+            <span className="flex link-a items-center ">
+              Logout <FaSignOutAlt />
+            </span>
           </button>
         ) : (
-            <Link to="/register">
-              <button className="btn">
+          <Link to="/register">
+            <button>
+              <span className="flex link-a items-center ">
                 <FaSignInAlt /> Register
-              </button>
-            </Link>
+              </span>
+            </button>
+          </Link>
         )}
-
-
       </div>
     </div>
   );
