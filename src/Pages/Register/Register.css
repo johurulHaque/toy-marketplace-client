@@ -1,6 +1,6 @@
 /* Custom styles for the registration form */
 .register-form {
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -26,6 +26,6 @@
     border: none;
 } */
 
-.register-form button:hover {
+/* .register-form button:hover {
     background-color: #555;
-}
+} */

@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import "./Register.css";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+import Lottie from "lottie-react";
+import lottieLogin from "../../assets/lottiefile.json";
 
 const Register = () => {
   const { createUser, googleSign, updateUser, allSignOut } =
@@ -13,7 +15,7 @@ const Register = () => {
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-//   const [pass, setPass] = useState("password");
+  //   const [pass, setPass] = useState("password");
 
   const handleRegister = (event) => {
     setError("");
@@ -68,9 +70,6 @@ const Register = () => {
       });
   };
 
-
-
-  
   const handleGoogle = () => {
     googleSign()
       .then((result) => {
@@ -101,62 +100,84 @@ const Register = () => {
   //   };
   return (
     <div className="register-form">
-      <h2 className="text-2xl font-bold mb-4">Please Register here</h2>
-      <form onSubmit={handleRegister}>
-        <div className="mb-4">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            className="input input-bordered"
-          />
+      <h2 className="text-2xl font-bold mb-4">Register here</h2>
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <form onSubmit={handleRegister}>
+            <div className="mb-4">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                type="url"
+                id="photoURL"
+                name="photoURL"
+                placeholder="Enter Photo url"
+                className="input input-bordered"
+              />
+            </div>
+            <div>
+            <span className="text-green-500">{success}</span>
+              <span className="text-red-500">{error}</span>
+            </div>
+            <button
+              type="submit"
+              className="bg-[#09ccd0] px-4 py-2 rounded text-white"
+            >
+              Register
+            </button>
+            <Link to="/login">or Login</Link>
+            
+            <button
+              onClick={handleGoogle}
+              className="bg-[#09ccd0] px-6 py-2 rounded text-white mt-3"
+            >
+              
+              <span className="flex items-center gap-3">
+                Sing With Google{" "}
+                <span className="text-[#ff6f69] font-bold text-2xl">
+                  {" "}
+                  <FaGoogle />
+                </span>
+              </span>
+            </button>
+          </form>
         </div>
-        <div className="mb-4">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            className="input input-bordered"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            className="input input-bordered"
-          />
-        </div>
-        <div className="mb-6">
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirm your password"
-            className="input input-bordered"
-          />
-        </div>
-        <div className="mb-6">
-          <input
-            type="url"
-            id="photoURL"
-            name="photoURL"
-            placeholder="Enter Photo url"
-            className="input input-bordered"
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-      </form>
-      <span className="text-green-500">{success}</span>
-      <span className="text-red-500">{error}</span>
-      <button  onClick={handleGoogle}  className="btn btn-primary">
-        Sing With Google <FaGoogle />
-      </button>
+        <Lottie animationData={lottieLogin} loop={true} />
+      </div>
     </div>
   );
 };

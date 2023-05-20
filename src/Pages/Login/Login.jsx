@@ -13,10 +13,12 @@ const Login = () => {
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
   const handleLogin = (event) => {
     event.preventDefault();
     setError("");
     setSuccess("");
+    
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -69,6 +71,10 @@ const Login = () => {
                 className="input input-bordered"
               />
             </div>
+            <div>
+              <span className="text-green-500">{success}</span>
+              <span className="text-red-500">{error}</span>
+            </div>
             <button
               type="submit"
               className="bg-[#09ccd0] px-4 py-2 rounded text-white"
@@ -77,25 +83,23 @@ const Login = () => {
             </button>
             <Link to="/register">or Register</Link>
           </form>
-          <span className="text-green-500">{success}</span>
-          <span className="text-red-500">{error}</span>
+
+          <button
+            onClick={handleGoogle}
+            className="bg-[#09ccd0] px-6 py-2 rounded text-white mt-3"
+          >
+            <span className="flex items-center gap-3">
+              Sing With Google{" "}
+              <span className="text-[#ff6f69] font-bold text-2xl">
+                {" "}
+                <FaGoogle />
+              </span>
+            </span>
+          </button>
         </div>
 
         <Lottie animationData={lottieLogin} loop={true} />
       </div>
-
-      <button
-        onClick={handleGoogle}
-        className="bg-[#09ccd0] px-6 py-2 rounded text-white"
-      >
-        <span className="flex items-center gap-3">
-          Sing With Google{" "}
-          <span className="text-[#ff6f69] font-bold text-2xl">
-            {" "}
-            <FaGoogle />
-          </span>
-        </span>
-      </button>
     </div>
   );
 };
