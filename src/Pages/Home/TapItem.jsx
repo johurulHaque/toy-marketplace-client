@@ -8,7 +8,7 @@ const TabItem = () => {
   const [datas, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toys-house-server.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         if (tabIndex == 0) {

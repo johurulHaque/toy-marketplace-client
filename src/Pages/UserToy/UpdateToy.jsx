@@ -20,7 +20,7 @@ const UpdateToy = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/update-toy/${_id}`, {
+    fetch(`https://toys-house-server.vercel.app/update-toy/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
