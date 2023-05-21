@@ -4,8 +4,10 @@ import { Link, useRouteError } from "react-router-dom";
 import lottieError from "../../assets/404-page.json";
 import Lottie from "lottie-react";
 import "./ErrorPage.css";
+import useTitle from "../../Hooks/useTitle";
 const ErrorPage = () => {
   const { error, status } = useRouteError();
+  useTitle('Error')
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center mt-10">

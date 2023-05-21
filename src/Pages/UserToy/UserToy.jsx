@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import UserToyTable from "./UserToyTable";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const UserToy = () => {
+  useTitle('My Toy')
   const { user } = useContext(AuthContext);
   const [userToys, setUserToys] = useState([]);
   const handleDelete = (id) => {

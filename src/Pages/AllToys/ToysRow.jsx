@@ -13,7 +13,7 @@ const ToysRow = ({ toy }) => {
       toast.error("You have to log in first to view details")
     }
   }
-  console.log(toy);
+  // console.log(toy);
   return (
     <tr>
       <td>

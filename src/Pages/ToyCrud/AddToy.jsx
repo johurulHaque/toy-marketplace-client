@@ -4,9 +4,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import "./AddToy.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 const AddToy = () => {
+
+
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  useTitle('Add Toy')
   const {
     register,
     handleSubmit,

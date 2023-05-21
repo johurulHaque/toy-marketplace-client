@@ -4,11 +4,16 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Lottie from "lottie-react";
 import lottieLogin from "../../assets/lottiefile.json";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
   const { signIn, googleSign } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  useTitle('Login')
+
+
+
   const from = location?.state?.from?.pathname || "/";
 
   const [success, setSuccess] = useState("");

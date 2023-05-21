@@ -5,12 +5,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import Lottie from "lottie-react";
 import lottieLogin from "../../assets/lottiefile.json";
+import useTitle from "../../Hooks/useTitle";
 
 const Register = () => {
   const { createUser, googleSign, updateUser, allSignOut } =
     useContext(AuthContext);
+
+  useTitle("Register");
   const location = useLocation();
   const navigate = useNavigate();
+
   const from = location?.state?.from?.pathname || "/";
 
   const [success, setSuccess] = useState("");
@@ -150,7 +154,7 @@ const Register = () => {
               />
             </div>
             <div>
-            <span className="text-green-500">{success}</span>
+              <span className="text-green-500">{success}</span>
               <span className="text-red-500">{error}</span>
             </div>
             <button
@@ -160,12 +164,11 @@ const Register = () => {
               Register
             </button>
             <Link to="/login">or Login</Link>
-            
+
             <button
               onClick={handleGoogle}
               className="bg-[#09ccd0] px-6 py-2 rounded text-white mt-3"
             >
-              
               <span className="flex items-center gap-3">
                 Sing With Google{" "}
                 <span className="text-[#ff6f69] font-bold text-2xl">

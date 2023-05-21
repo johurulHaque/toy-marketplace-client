@@ -6,6 +6,7 @@ const UserToyTable = ({ toy, handleDelete }) => {
   const { _id, name, price, quantity, subcategory,image } = toy;
   // console.log(toy);
 
+
   return (
     <tr>
        <td>

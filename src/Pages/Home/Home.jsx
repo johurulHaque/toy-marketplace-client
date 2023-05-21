@@ -1,9 +1,10 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import TabItem from './TapItem';
+import useTitle from '../../Hooks/useTitle';
 
 const Home = () => {
-    
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>  
