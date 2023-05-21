@@ -34,21 +34,8 @@ const UserToy = () => {
       }
     });
 
-    // if(proced){
-    //     fetch(`http://localhost:5000/toy/${id}`,{
-    //         method:"DELETE"
-    //     })
-    //     .then(res => res.json())
-    //     .then(data =>{
-    //         if(data.deletedCount > 0){
-    //             alert('delete successful')
-    //             const remaing = userToys.filter(toy => toy._id !== id);
-    //             setUserToys(remaing)
-    //         }
-    //         // console.log(data)
-    //     })
-    // }
-    console.log(id);
+
+    // console.log(id);
   };
 
   const url = `http://localhost:5000/user-toy?email=${user?.email}`;
@@ -62,7 +49,7 @@ const UserToy = () => {
 
   return (
     <div>
-      <h1>User Toy</h1>
+      <h1 className="link-a">My Toys</h1>
       <table className="table table-zebra w-full">
         {/* head */}
         <thead>

@@ -96,12 +96,7 @@ const Register = () => {
         // console.log(error);
       });
   };
-  //   const showPass = () => {
-  //     setPass("text");
-  //   };
-  //   const hidePass = () => {
-  //     setPass("password");
-  //   };
+
   return (
     <div className="register-form">
       <h2 className="text-2xl font-bold mb-4">Register here</h2>

@@ -9,7 +9,7 @@ const UpdateToy = () => {
   const { user } = useContext(AuthContext);
   const loadData = useLoaderData();
   const { _id, name, image, price, quantity, subcategory,description } = loadData;
-  console.log(loadData);
+  // console.log(loadData);
   const {
     register,
     handleSubmit,
@@ -63,21 +63,7 @@ const UpdateToy = () => {
             />
           </div>
         </div>
-
-        {/* <input
-          className="text-input"
-          {...register("sellerName", { required: true })}
-          type="text"
-          value={user?.displayName}
-        />{" "}
-        <br />
-        <input
-          className="text-input"
-          value={user?.email}
-          {...register("email", { required: true })}
-          type="email"
-        />{" "}
-        <br /> */}
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4   mb-4">
           <div className="form-control">
@@ -97,22 +83,7 @@ const UpdateToy = () => {
             />
           </div>
         </div>
-        {/* <input
-          className="text-input"
-          {...register("name", { required: true })}
-          type="text"
-          defaultValue={name}
-        />
-        <br />
-        <input
-          className="text-input"
-          {...register("image")}
-          type="url"
-          //   placeholder="image link"
-          defaultValue={image}
-        />{" "}
-        <br /> */}
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mb-4">
           <div className="form-control">
             <input
@@ -132,27 +103,7 @@ const UpdateToy = () => {
           </div>
         </div>
 
-        {/* <input
-          className="text-input"
-          {...register("subcategory", { required: true })}
-          type="text"
-          defaultValue={subcategory}
-        />{" "}
-        <br />
-        <input
-          className="text-input"
-          {...register("price", { required: true })}
-          type="text"
-          defaultValue={price}
-        />{" "}
-        <br /> */}
-        {/* <input
-          className="text-input"
-          {...register("quantity", { required: true })}
-          type="number"
-          defaultValue={quantity}
-          />{" "}
-        <br /> */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mb-4">
           <div className="form-control">
             <input
