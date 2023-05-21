@@ -20,9 +20,12 @@ const Home = () => {
       </h2>
       <Gallery></Gallery>
 
-     <ClientTalk></ClientTalk>
+      <h2 className="text-center mt-6 font-bold text-2xl link-a">
+        Our Client Say’s
+      </h2>
+      <ClientTalk></ClientTalk>
 
-      <Marquee style={{ marginBottom: "25px" }}>
+      <Marquee style={{ marginBottom: "25px" }} className="mt-10">
         <img src="./toy/logo1.jpg" className="w-32 h-24" />
         <img src="./toy/logo2.jpg" className="w-32 h-24" />
         <img src="./toy/logo3.jpg" className="w-32 h-24" />
