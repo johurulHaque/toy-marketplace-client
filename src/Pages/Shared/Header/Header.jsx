@@ -53,12 +53,12 @@ const Header = () => {
             {user ? (
               <>
                 <li>
-                  <Link className="link-a" to="/usertoy">
+                  <Link  to="/usertoy">
                     My Toys
                   </Link>
                 </li>
                 <li>
-                  <Link className="link-a" to="/addtoy">
+                  <Link  to="/addtoy">
                     Add Toy
                   </Link>
                 </li>
@@ -67,7 +67,7 @@ const Header = () => {
               ""
             )}
             <li>
-              <a>Blogs</a>
+            <Link  to="/blog"> Blogs</Link>
             </li>
           </ul>
         </div>

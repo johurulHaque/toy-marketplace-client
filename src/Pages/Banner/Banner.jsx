@@ -12,7 +12,7 @@ const Banner = () => {
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
           <div className="text-white space-y-7 w-1/2 pl-12 ">
-            <h2 className="text-4xl md:text-6xl  font-bold">
+            <h2 className="text-2xl md:text-6xl  font-bold">
             Collect the Ultimate Avengers Toy Collection!
             </h2>
             <p>
@@ -48,7 +48,7 @@ const Banner = () => {
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
           <div className="text-white space-y-7 w-1/2 pl-12 ">
-            <h2 className="text-4xl md:text-6xl font-bold">
+            <h2 className="text-2xl md:text-6xl font-bold">
             Get Ready for Adventure with Avengers Toys and Accessories!
             </h2>
             <p>
@@ -84,7 +84,7 @@ const Banner = () => {
         />
         <div className="absolute flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full rounded-lg">
           <div className="text-white space-y-7 w-1/2 pl-12 ">
-            <h2 className="text-4xl md:text-6xl font-bold">
+            <h2 className="text-2xl md:text-6xl font-bold">
             Power Up Your Playtime with Avengers Action Figures!
             </h2>
             <p>

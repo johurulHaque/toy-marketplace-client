@@ -3,7 +3,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const ClientTalk = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Celebrating a Joyful Toy Marketplace!</h2>
