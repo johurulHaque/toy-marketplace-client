@@ -10,6 +10,7 @@ import UserToy from "../Pages/UserToy/UserToy";
 import UpdateToy from "../Pages/UserToy/UpdateToy";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
         },
         {
           path: "/register",
